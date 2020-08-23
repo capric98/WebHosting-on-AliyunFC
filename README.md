@@ -19,7 +19,8 @@ Run most of the websites written by PHP on Aliyun Function Compute without any c
   * ACCOUNT_ID: Aliyun Account ID
   * ACCESS_KEY_ID: Aliyun ACCESS_KEY_ID
   * ACCESS_KEY_SECRETS: ACCESS_KEY_SECRETS
-    **Ps.  Make sure that your RAM Role have the following privileges:**
+
+    **Ps.  Make sure that your RAM Role has the following privileges:**
     * AliyunRAMFullAccess
     * AliyunNASFullAccess
     * AliyunFCFullAccess
