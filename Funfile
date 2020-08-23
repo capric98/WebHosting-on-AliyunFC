@@ -1,0 +1,23 @@
+RUNTIME custom
+RUN apt-get update
+RUN apt-get -y install apt-transport-https lsb-release ca-certificates wget gnupg
+RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+RUN sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+RUN wget https://nginx.org/keys/nginx_signing.key
+RUN apt-key add nginx_signing.key && rm -rf nginx_signing.key
+RUN sh -c 'echo "deb https://nginx.org/packages/debian/ $(lsb_release -sc) nginx" > /etc/apt/sources.list.d/nginx.list'
+RUN apt-get update
+
+RUN fun-install apt-get install nginx
+RUN fun-install apt-get install php7.4-fpm
+RUN fun-install apt-get install php7.4-common
+RUN fun-install apt-get install php7.4-curl
+RUN fun-install apt-get install php7.4-gd
+RUN fun-install apt-get install php7.4-json
+RUN fun-install apt-get install php7.4-mbstring
+RUN fun-install apt-get install php7.4-mysql
+RUN fun-install apt-get install php7.4-opcache
+RUN fun-install apt-get install php7.4-soap
+RUN fun-install apt-get install php7.4-sqlite3
+RUN fun-install apt-get install php7.4-xml
+RUN fun-install apt-get install php7.4-zip

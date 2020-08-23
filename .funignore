@@ -1,0 +1,9 @@
+.env
+.fun/
+template.yml
+.funignore
+.gitignore
+.github
+README.md
+LICENSE
+phpMyAdmin
