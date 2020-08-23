@@ -2,9 +2,9 @@
 Run most of the websites written by PHP on Aliyun Function Compute without any changes.
 
 ## Usage
-1. Fork this repo.
-2. Edit tinyfilemanager/index.php, change "auth_users" username&password, and other configs if you like.
-3. Login to Aliyun Console:
+* Fork this repo.
+* Edit tinyfilemanager/index.php, change "auth_users" username&password, and other configs if you like.
+* Login to Aliyun Console:
   * Create a VPC and vSwitch.
   * Create a NAS on the same region.
   * Create a Service on the same region.
@@ -12,8 +12,8 @@ Run most of the websites written by PHP on Aliyun Function Compute without any c
   * Create a Funtion belong to the service, choose custom runtime.
   * Export the function configurations from the fc console, save it to `template.yml`.
   * Add `CodeUri: ./` to function properties in `template.yml`, save and upload it to somewhere(Github Gist is a good choice).
-4. Edit `config/vhost/main.conf` in advance.
-5. Add secrets:
+* Edit `config/vhost/main.conf` in advance.
+* Add secrets:
   * TEMPLATE_URL: Actions will download template.yml from this URL.
   * REGION: Aliyun FC Region
   * ACCOUNT_ID: Aliyun Account ID
@@ -25,6 +25,6 @@ Run most of the websites written by PHP on Aliyun Function Compute without any c
     * AliyunNASFullAccess
     * AliyunFCFullAccess
     * AliyunECSNetworkInterfaceManagementAccess
-6. Trigger actions, wait it to finish.
-7. Add custom domain at console.
-8. Upload your website files via tinyfilemanager.
+* Trigger actions, wait it to finish.
+* Add custom domain at console.
+* Upload your website files via tinyfilemanager.
