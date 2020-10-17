@@ -33,6 +33,7 @@ jobs:
 
     - name: Build FC
       run: |
+        chmod +x bootstrap
         fun build
     - name: Deploy
       run: |
