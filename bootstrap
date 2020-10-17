@@ -1,0 +1,22 @@
+#!/bin/bash
+set +e
+
+export TZ='Asia/Shanghai'
+
+php-fpm7.4 -c /code/config/php.ini -y /code/config/fpm.conf
+nginx -c /code/config/nginx.conf
+
+while true
+do
+    php_fpm_server=`ps aux | grep php-fpm | grep -v grep`
+    if [ ! "$php_fpm_server" ]; then
+        echo "restart php-fpm ..."
+        php-fpm7.4 -c /code/config/php.ini -y /code/config/fpm.conf
+    fi
+    nginx_server=`ps aux | grep nginx | grep -v grep`
+    if [ ! "$nginx_server" ]; then
+        echo "restart nginx ..."
+        nginx -c /code/config/nginx.conf
+    fi
+    sleep 1
+done
